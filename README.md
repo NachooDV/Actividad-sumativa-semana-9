@@ -191,3 +191,9 @@ Importa la colección incluida en `/postman/API_REST_Clientes.postman_collection
 - **Sanitización de texto** (elimina etiquetas HTML)
 - **Manejo de errores HTTP** con códigos adecuados (400, 404, 409, 500)
 - **Variables de entorno** para credenciales (nunca en el código)
+
+---
+
+## VIDEO DEMOSTRATIVO
+
+[![Ver demo](https://img.youtube.com/watch?v=abb1g013vek/0.jpg)](https://www.youtube.com/watch?v=abb1g013vek)
