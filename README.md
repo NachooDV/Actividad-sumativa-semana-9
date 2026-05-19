@@ -12,7 +12,7 @@ Actividad Sumativa – Semana 9 | Taller de Plataformas Web | AIEP
 |---|---|---|
 | Node.js | 18+ | Entorno de ejecución |
 | Express | 5.x | Framework web |
-| mysql2 | 3.x | Cliente MySQL con soporte Promise |
+| mysql2 | 3.x | Cliente MySQL |
 | dotenv | 16.x | Variables de entorno |
 | MySQL / MariaDB | 8+ / 10+ | Base de datos relacional |
 
@@ -58,7 +58,7 @@ npm install
 
 ### 3. Configurar variables de entorno
 
-Edita `.env` con los datos de tu MySQL:
+Edita `.env` con los datos reales de tu MySQL:
 
 ```env
 DB_HOST=localhost
@@ -71,13 +71,7 @@ PORT=3000
 
 ### 4. Crear la base de datos
 
-Ejecuta el script SQL en tu gestor de MySQL (phpMyAdmin o consola):
-
-```bash
-mysql -u root -p < database.sql
-```
-
-O abre `database.sql` en phpMyAdmin y ejecútalo.
+Ejecutar el script SQL en tu gestor de MySQL (phpMyAdmin en este caso). Abrir `database.sql` en phpMyAdmin y ejecútarlo.
 
 ### 5. Iniciar el servidor
 
@@ -175,12 +169,12 @@ DELETE http://localhost:3000/api/clientes/3
 
 ## Pruebas con Postman
 
-Importa la colección incluida en `/postman/API_REST_Clientes.postman_collection.json`:
+Importar la colección incluida en `/postman/API_REST_Clientes.postman_collection.json`:
 
-1. Abre Postman
+1. Abrir Postman
 2. Click en **Import**
 3. Selecciona el archivo `.json`
-4. Ejecuta cada request en orden
+4. Ejecutar cada request en orden
 
 ---
 
