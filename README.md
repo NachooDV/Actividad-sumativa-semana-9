@@ -33,7 +33,7 @@ api_rest_clientes/
 ├── postman/
 │   └── API_REST_Clientes.postman_collection.json
 ├── database.sql                  # Script SQL para crear la BD
-├── .env.example                  # Plantilla de variables de entorno
+├── .env                          # variables de entorno
 ├── .gitignore
 ├── package.json
 └── README.md
