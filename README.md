@@ -196,4 +196,4 @@ Importa la colección incluida en `/postman/API_REST_Clientes.postman_collection
 
 ## VIDEO DEMOSTRATIVO
 
-[Ver video demostrativo](https://www.youtube.com/watch?v=abb1g013vek)
+<video src="Actividad semana 9.mp4" controls width="700"></video>
