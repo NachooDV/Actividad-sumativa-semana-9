@@ -1,0 +1,230 @@
+{
+  "info": {
+    "name": "API REST Clientes - Node.js + Express",
+    "_postman_id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+    "description": "Colección completa para probar la API REST de clientes.\nIncluye los 5 endpoints CRUD con casos de éxito y manejo de errores.\n\nBase URL: http://localhost:3000",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:3000",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/",
+          "host": ["{{base_url}}"],
+          "path": [""]
+        },
+        "description": "Verifica que el servidor esté activo."
+      }
+    },
+    {
+      "name": "GET - Listar todos los clientes",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/clientes",
+          "host": ["{{base_url}}"],
+          "path": ["api", "clientes"]
+        },
+        "description": "Retorna la lista completa de clientes registrados.\nRespuesta esperada: 200 OK"
+      }
+    },
+    {
+      "name": "GET - Obtener cliente por ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/clientes/1",
+          "host": ["{{base_url}}"],
+          "path": ["api", "clientes", "1"]
+        },
+        "description": "Retorna el cliente con id_cliente = 1.\nRespuesta esperada: 200 OK"
+      }
+    },
+    {
+      "name": "GET - Cliente no encontrado (404)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/clientes/9999",
+          "host": ["{{base_url}}"],
+          "path": ["api", "clientes", "9999"]
+        },
+        "description": "Solicita un ID que no existe.\nRespuesta esperada: 404 Not Found"
+      }
+    },
+    {
+      "name": "POST - Crear cliente (éxito)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nombre\": \"Laura Martínez\",\n  \"email\": \"laura.martinez@correo.cl\",\n  \"telefono\": \"+56944444444\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/api/clientes",
+          "host": ["{{base_url}}"],
+          "path": ["api", "clientes"]
+        },
+        "description": "Crea un nuevo cliente con datos válidos.\nRespuesta esperada: 201 Created"
+      }
+    },
+    {
+      "name": "POST - Email duplicado (409)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nombre\": \"Otra Laura\",\n  \"email\": \"laura.martinez@correo.cl\",\n  \"telefono\": \"+56955555555\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/api/clientes",
+          "host": ["{{base_url}}"],
+          "path": ["api", "clientes"]
+        },
+        "description": "Intenta registrar un email ya existente.\nRespuesta esperada: 409 Conflict"
+      }
+    },
+    {
+      "name": "POST - Campos faltantes (400)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nombre\": \"Sin Email\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/api/clientes",
+          "host": ["{{base_url}}"],
+          "path": ["api", "clientes"]
+        },
+        "description": "Envía un body sin el campo email.\nRespuesta esperada: 400 Bad Request"
+      }
+    },
+    {
+      "name": "PUT - Actualizar cliente (éxito)",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nombre\": \"Ana Pérez Actualizada\",\n  \"email\": \"ana.perez@correo.cl\",\n  \"telefono\": \"+56999999999\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/api/clientes/1",
+          "host": ["{{base_url}}"],
+          "path": ["api", "clientes", "1"]
+        },
+        "description": "Actualiza el cliente con id_cliente = 1.\nRespuesta esperada: 200 OK"
+      }
+    },
+    {
+      "name": "PUT - ID inexistente (404)",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nombre\": \"Nadie\",\n  \"email\": \"nadie@correo.cl\",\n  \"telefono\": \"\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{base_url}}/api/clientes/9999",
+          "host": ["{{base_url}}"],
+          "path": ["api", "clientes", "9999"]
+        },
+        "description": "Intenta actualizar un cliente que no existe.\nRespuesta esperada: 404 Not Found"
+      }
+    },
+    {
+      "name": "DELETE - Eliminar cliente (éxito)",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/clientes/3",
+          "host": ["{{base_url}}"],
+          "path": ["api", "clientes", "3"]
+        },
+        "description": "Elimina el cliente con id_cliente = 3.\nRespuesta esperada: 200 OK"
+      }
+    },
+    {
+      "name": "DELETE - ID inexistente (404)",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/clientes/9999",
+          "host": ["{{base_url}}"],
+          "path": ["api", "clientes", "9999"]
+        },
+        "description": "Intenta eliminar un cliente que no existe.\nRespuesta esperada: 404 Not Found"
+      }
+    }
+  ]
+}
