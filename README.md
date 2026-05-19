@@ -196,4 +196,6 @@ Importa la colección incluida en `/postman/API_REST_Clientes.postman_collection
 
 ## VIDEO DEMOSTRATIVO
 
-<video src="https://github.com/NachooDV/Actividad-sumativa-semana-9/blob/main/Actividad_semana_9.mp4" controls width="700"></video>
+<video src="https://raw.githubusercontent.com/NachooDV/Actividad-sumativa-semana-9/refs/heads/main/Actividad_semana_9.mp4" controls width="700"></video>
+
+
